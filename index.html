@@ -1,46 +1,133 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8">
-<title>ROC 잠정·확정 통섭 — 제출·공지 패키지</title><style>
-@page{size:A4;margin:14mm 13mm}
-*{box-sizing:border-box;-webkit-print-color-adjust:exact;
- print-color-adjust:exact}
-body{font-family:"Malgun Gothic","맑은 고딕",sans-serif;color:#16202b;
- margin:0;font-size:9.2pt;line-height:1.68;background:#fff}
-.doc{max-width:184mm;margin:0 auto}
-.hd{background:linear-gradient(100deg,#0f2740,#1f3a5f);color:#fff;
- padding:4.5mm 5.5mm;border-radius:3px;margin-bottom:4mm}
-h1{font-size:14pt;margin:0 0 1.4mm;letter-spacing:-.3px}
-.hd .s{font-size:8.8pt;color:#bcd3ea}
-.hd .b{font-size:8.2pt;color:#9fc0e0;margin-top:1.4mm;padding-top:1.4mm;
- border-top:1px solid #4a6a8a}
-h2{font-size:11pt;color:#0f2740;margin:5.5mm 0 2mm;padding-bottom:1.1mm;
- border-bottom:1.6pt solid #0f2740}
-table{border-collapse:collapse;width:100%;font-size:8.4pt;margin:2mm 0;
- table-layout:fixed}
-tr{page-break-inside:avoid}
-th,td{border:1px solid #c3ccd6;padding:1.4mm 2mm;vertical-align:top;
- text-align:left;word-wrap:break-word}
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>미국 ETF ROC 국제조세 데이터 투명성 연구</title><style>
+@page{size:A4;margin:14mm}
+*{box-sizing:border-box}
+body{font-family:"Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+ word-break:keep-all;color:#16202b;margin:0;line-height:1.72;
+ font-size:15px;background:#fbfcfd}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px 60px}
+a{color:#0f2740}
+.hd{background:linear-gradient(105deg,#0b1f34,#1f3a5f);color:#fff;
+ margin:0 -22px 26px;padding:44px 22px 30px}
+.hd .in{max-width:1036px;margin:0 auto}
+.eyebrow{font-size:12.5px;letter-spacing:2.4px;color:#8fb2d4;
+ text-transform:uppercase;margin-bottom:10px}
+h1{font-size:31px;line-height:1.3;margin:0 0 12px;letter-spacing:-.6px}
+h1 .en{display:block;font-size:15px;font-weight:400;color:#a9c6e2;
+ letter-spacing:0;margin-top:8px}
+.sub{font-size:15px;color:#cfe0f0;max-width:860px}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:22px 0 6px}
+.flow span{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.26);
+ border-radius:3px;padding:7px 13px;font-size:13.5px;color:#fff}
+.flow i{color:#7fa3c8;font-style:normal}
+.hd .m{display:flex;flex-wrap:wrap;gap:2px 20px;font-size:13px;
+ color:#9fc0e0;margin-top:22px;padding-top:14px;
+ border-top:1px solid rgba(255,255,255,.24)}
+.hd .m b{color:#e2eefa}
+.hd a{color:#fff;text-decoration:none;
+ border-bottom:1px solid rgba(255,255,255,.5)}
+
+h2{font-size:20.5px;color:#0f2740;margin:40px 0 6px;padding-bottom:8px;
+ border-bottom:2.4px solid #0f2740}
+h2 .n{color:#7c93ab;font-weight:400;margin-right:9px}
+.lead{font-size:16px;color:#26374a;border-left:3px solid #0f2740;
+ padding:4px 0 4px 15px;margin:16px 0}
+p{margin:12px 0}
+.card{background:#fff;border:1px solid #d7dfe8;border-radius:5px;
+ padding:18px 20px;margin:14px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));
+ gap:14px;margin:16px 0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+ gap:14px;margin:16px 0}
+.role{background:#fff;border:1px solid #d7dfe8;border-top:3px solid #1f3a5f;
+ border-radius:4px;padding:15px 17px}
+.role b{display:block;color:#0f2740;font-size:16px;margin-bottom:5px}
+
+/* 계보 */
+.lin{background:#fff;border:1px solid #d7dfe8;border-radius:5px;
+ padding:20px;margin:16px 0}
+.step{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch}
+.step .s{flex:1 1 128px;border:1px solid #c3ccd6;border-radius:4px;
+ background:#f7f9fc;padding:10px 11px;font-size:13.2px;text-align:center;
+ display:flex;flex-direction:column;justify-content:center}
+.step .s b{display:block;color:#0f2740;font-size:13.8px}
+.step .s.p{border-color:#e0bd7a;background:#fff8ea}
+.step .s.f{border-color:#8fbf9c;background:#f1f8f3}
+.step .s.g{border-color:#c98a8a;background:#fdf5f5}
+.step i{display:flex;align-items:center;color:#93a7bd;font-style:normal}
+.branch{margin-top:14px;padding-top:13px;border-top:1px dashed #c3ccd6;
+ display:flex;flex-wrap:wrap;gap:7px;align-items:center;font-size:13.2px}
+.branch .t{font-weight:700;color:#1b5e20;margin-right:6px}
+
+/* 증거 */
+.ev{background:#fff;border:1px solid #d7dfe8;border-radius:5px;
+ overflow:hidden;margin:14px 0}
+.ev .h{background:#eef2f6;border-bottom:1px solid #d7dfe8;
+ padding:12px 18px;display:flex;flex-wrap:wrap;gap:4px 12px;
+ align-items:baseline}
+.ev .h b{font-size:16px;color:#0f2740}
+.ev .h .meta{font-size:12.8px;color:#5a6a7a}
+.ev .b{padding:15px 18px}
+.ev .row{display:grid;grid-template-columns:118px 1fr;gap:10px;
+ padding:8px 0;border-top:1px dotted #d7dfe8;font-size:14px}
+.ev .row:first-child{border-top:none}
+.ev .row .k{font-weight:700;font-size:13px;padding-top:2px}
+.k-yes{color:#1b5e20}.k-no{color:#8a5a00}.k-imp{color:#0f2740}
+.imp{background:#f4f9f5;border-left:3px solid #1b5e20;padding:10px 13px;
+ font-size:14px;border-radius:0 3px 3px 0}
+.warn{background:#fdf6f6;border-left:3px solid #9b1c1c;padding:12px 15px;
+ border-radius:0 3px 3px 0;font-size:14.4px;margin:14px 0}
+.note{background:#f7f9fc;border-left:3px solid #5a6a7a;padding:12px 15px;
+ border-radius:0 3px 3px 0;font-size:14.4px;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:14px 0;
+ background:#fff}
+th,td{border:1px solid #d7dfe8;padding:9px 11px;vertical-align:top;
+ text-align:left}
 th{background:#eef2f6;color:#0f2740}
-td.c{text-align:center}
-a{color:#0f2740;font-weight:700;text-decoration:none;
- border-bottom:.8pt solid #9bb0c8}
-a:hover{background:#eef3f8}
-.n{border-left:3.2pt solid #b45309;background:#fffaf2;padding:2.2mm 3mm;
- margin:2.5mm 0;font-size:8.4pt}
-.g{border-left:3.2pt solid #1b5e20;background:#f4f9f5;padding:2.2mm 3mm;
- margin:2.5mm 0;font-size:8.4pt}
-.hd a,.tp a{color:#fff;text-decoration:none;border-bottom:.6pt solid rgba(255,255,255,.55)}
-.foot{margin-top:5mm;padding-top:2mm;border-top:.8pt solid #c3ccd6;
- color:#5a6a7a;font-size:7.6pt}
-</style></head><body><div class="doc"><div class="hd"><h1>외국 상장 ETF 분배금의 소득성격 확정·재분류 — 제출·공지 패키지</h1><div class="s">제반규정과 정보공개 결정통지를 한 폴더에서 고리로 엮는다. 전거 고리는 바깥을 가리키지 아니한다.</div><div class="b">— 투명성 · 접근성 · 추적성 · 재현성이 필수인 Return of Capital 세액환급 국제조세 금융세제 정책결정과정의 폐쇄성을 비판하며 — &nbsp;|&nbsp; V1.0 · 2026-09-08</div><div class="b" style="border-top:none;padding-top:0;margin-top:.8mm"><b>발행자</b> 인흥 장세봉 · 독립연구자 &nbsp;·&nbsp; <a href="mailto:inheung0801@gmail.com">inheung0801@gmail.com</a> &nbsp;·&nbsp; 010-7753-1240<br>구미시 1공단로 212 한라시그마밸리 지식산업센터 815~816호 &nbsp;·&nbsp; <a href="https://cafe.naver.com/l2t">https://cafe.naver.com/l2t</a><br><b>계산기</b> ROC 환급 종합소득세 계산기 &nbsp;·&nbsp; <a href="https://sebjang.github.io/ROC_INNER_BASIS_576/">https://sebjang.github.io/ROC_INNER_BASIS_576/</a></div></div>
-<div class="n"><b>이 패키지를 내는 까닭.</b> 본건에 관하여 공개된 <b>공청회가 한 차례도 없습니다.</b> 그러므로 이 패키지는 <b>공론화를 위하여</b> 공개된 법령·규정·공시자료와 국가기관의 정보공개 결정통지만을 원부로 삼아 사실을 정리하고, 누구나 같은 자료로 같은 값에 이를 수 있도록 고리를 걸어 둔 것입니다. 개별 사건의 과세처분이 적법한지는 판단하지 아니합니다.</div>
-<h2>Ⅰ. 조서 — 먼저 읽을 것부터</h2>
-<table><tr><th style="width:15%">쓰임</th><th style="width:14%">종류</th><th style="width:30%">낱</th><th>내용</th></tr><tr><td class="c">공지·게시</td><td><b>백서 인포그래픽</b></td><td><a href="docs/05_백서_인포그래픽_한장으로_보는_전체.pdf">05_백서_인포그래픽_한장으로_보는_전체.pdf</a></td><td>한 장으로 보는 전체 — 시간축 · 계보 · 재현식 · 네 조건 · 회신 네 건</td></tr><tr><td class="c">제출·설명</td><td><b>통섭 조서</b></td><td><a href="docs/01_한눈에보는_ROC잠정과확정_통섭.pdf">01_한눈에보는_ROC잠정과확정_통섭.pdf</a></td><td>세 단계의 요인 · 정보공개 결정통지 4건의 통섭 · 전산데이터 계보 · 용어전거표</td></tr><tr><td class="c">공론화</td><td><b>논문</b></td><td><a href="docs/04_논문_검증가능성과_과세권.pdf">04_논문_검증가능성과_과세권.pdf</a></td><td>검증 가능성과 과세권 — 조세행정의 인식론적 조건. 명제 5와 결론</td></tr><tr><td class="c">제출</td><td><b>연구보고서</b></td><td><a href="docs/02_연구보고서_수리증명과_사실증빙.pdf">02_연구보고서_수리증명과_사실증빙.pdf</a></td><td>정보공개 결정통지 4건을 원부로 한 수리증명 — 명제 7과 따름 1</td></tr><tr><td class="c">제출</td><td><b>한 장 대비</b></td><td><a href="docs/03_형식과세와_근거과세_한장대비.pdf">03_형식과세와_근거과세_한장대비.pdf</a></td><td>조사의 차례 · 입증의 배분 · 재현식 · 미환급 건의 권리</td></tr></table>
-<h2>Ⅱ. 제반규정 — 미국 연방세법·재무부규칙·서식 · 조약 · 국내법</h2>
-<table><tr><th style="width:32%">낱</th><th style="width:24%">전거</th><th>그 전거가 정하는 것</th></tr><tr><td><a href="sources/SRC_09_USC301_Distributions.pdf">SRC_09_USC301_Distributions.pdf</a></td><td><b>미국 내국세법 제301조(c)</b></td><td>Nondividend Distribution<wbr>(비배당분배) 은 adjusted basis<wbr>(조정취득가액) 에 충당되어 이를 감소시킨다</td></tr><tr><td><a href="sources/SRC_10_USC316_Dividend.pdf">SRC_10_USC316_Dividend.pdf</a></td><td><b>같은 법 제316조(a)</b></td><td>earnings and profits<wbr>(이익 및 잉여금) 로부터 이루어진 분배만 Dividend 이다</td></tr><tr><td><a href="sources/SRC_11_USC851_RIC.pdf">SRC_11_USC851_RIC.pdf</a></td><td><b>같은 법 제851조</b></td><td>Regulated Investment Company<wbr>(규제투자회사) 의 정의. (g)는 각 Fund 를 이 편의 목적상 separate corporation<wbr>(별개의 법인) 으로, Fund 를 segregated portfolio<wbr>(분리된 자산 포트폴리오) 로 정한다</td></tr><tr><td><a href="sources/SRC_12_USC6045B_IssuerReporting.pdf">SRC_12_USC6045B_IssuerReporting.pdf</a></td><td><b>같은 법 제6045B조(a)</b></td><td>취득가액에 영향을 미치는 organizational action 과 그 수량적 효과의 발행자 신고의무</td></tr><tr><td><a href="sources/SRC_13_Form8937_Instructions.pdf">SRC_13_Form8937_Instructions.pdf</a></td><td><b>Form 8937 안내</b></td><td>Form 1099-DIV 에 Dividend 로 보고되는 분배는 8937 로 보고하지 아니한다</td></tr><tr><td><a href="sources/SRC_07_Form1042S.pdf">SRC_07_Form1042S.pdf</a></td><td><b>Form 1042-S 서식</b></td><td>Box 1 Income code · Box 2 Gross income. 코드표에 37 Return of capital</td></tr><tr><td><a href="sources/SRC_08_Form1042S_Instructions.pdf">SRC_08_Form1042S_Instructions.pdf</a></td><td><b>같은 서식 지침</b></td><td>코드 37 은 nondividend distribution<wbr>(비배당분배) 에 쓴다 — earnings and profits<wbr>(이익 및 잉여금) 에서 지급되지 아니한 분배이며 주식과 교환한 대가이다</td></tr><tr><td><a href="sources/SRC_14_KORUS_Treaty_Art28.pdf">SRC_14_KORUS_Treaty_Art28.pdf</a></td><td><b>조약 제693호 제28조</b></td><td>정보의 교환. 특별한 요청이 있으면 서적·서류·진술·기록·계산서를 포함한 「미편집 원작의 사본형태」로 제공한다</td></tr><tr><td><a href="sources/SRC_15_IntlTaxAct_Art36_38.pdf">SRC_15_IntlTaxAct_Art36_38.pdf</a></td><td><b>「국제조세조정에 관한 법률」 제36조·제38조</b></td><td>권한 있는 당국의 조세정보 획득·교환. 납세의무자에게 요구할 수 있는 것은 실제소유자 정보</td></tr><tr><td><a href="sources/SRC_17_KSD_Extension_16835791.pdf">SRC_17_KSD_Extension_16835791.pdf</a></td><td><b>결정기간 연장통지 · 접수 16835791</b></td><td>시행 리스크-1738(2026-06-24). 연장 사유 — 소득재분류 미반영에 관하여 현지 보관기관의 확인이 필요하고 그 조사·답변이 지연됨</td></tr><tr><td><a href="sources/SRC_18_KSD_Extension_16848277.pdf">SRC_18_KSD_Extension_16848277.pdf</a></td><td><b>결정기간 연장통지 · 접수 16848277</b></td><td>같은 사유의 다섯째 청구. 다른 납세자의 약호와 보유수량은 가렸다</td></tr><tr><td><a href="sources/SRC_19_MOFE_Ruling_576.pdf">SRC_19_MOFE_Ruling_576.pdf</a></td><td><b>재정경제부 금융세제과-576 원문</b></td><td>이익·잉여금의 분배인지 자본의 감소로 인한 대가인지는 국내외 제반 규정에 따라 사실 판단할 사항</td></tr><tr><td>SRC_16_Issuer_FinalTaxData_Excerpt.pdf <span title="공개판에서 뺀 낱">(공개판 제외)</span></td><td><b>발행기관 확정자료 인용면 발췌</b></td><td>ICI Primary Layout Box 3<wbr>(원본 220면) · 각 Fund 를 separate corporation<wbr>(별개의 법인) 으로 본다는 발행기관 자기진술(원본 1233면). 원본 1,328면 중 인용 2면만 뽑고 꼬리말 도장의 성명은 가렸다</td></tr><tr><td><a href="sources/SRC_05_TSLY_ROC_Evidence.pdf">SRC_05_TSLY_ROC_Evidence.pdf</a></td><td><b>실증 — 식별번호 경계의 미환급</b></td><td>같은 종목·같은 100% Return of Capital<wbr>(자본환급) 인데 옛 식별번호 회차만 환급 0</td></tr><tr><td><a href="sources/SRC_06_QDTE_Refund_Statement.pdf">SRC_06_QDTE_Refund_Statement.pdf</a></td><td><b>실증 — 환급청구 진술서</b></td><td>§1.1441-3(c) · §1.1461-2 · 제1464조 · 제6402조와 계산식</td></tr></table>
-<div class="g">원부에는 조서가 인용한 문장에 <b>형광</b>이 칠해져 있습니다. 고리를 누르면 그 자리로 갑니다. 형광은 원문에서 그 문장을 실제로 찾은 자리에만 넣었으며, 찾지 못한 곳에는 넣지 아니하였습니다.</div>
-<h2>Ⅲ. 정보공개 결정통지 — 네 건의 계보</h2>
-<table><tr><th style="width:26%">낱</th><th style="width:12%">접수</th><th style="width:18%">결정 · 시행</th><th>확정된 것</th></tr><tr><td><a href="sources/SRC_01_KSD_Decision_16516499.pdf">SRC_01_KSD_Decision_16516499.pdf</a></td><td class="c"><b>접수 16516499</b></td><td>2026-04-24 접수 · 2026-05-07 부분공개</td><td>기업행위 메시지에 DVCA 제외 기타코드인 건은 없다 · 우선배당 간주 후 소득구분 확정 시 재분류·환급 · DTCC 참가자 아님 · ICI Tax Supplement 미수령</td></tr><tr><td><a href="sources/SRC_02_KSD_Decision_16764618.pdf">SRC_02_KSD_Decision_16764618.pdf</a></td><td class="c"><b>접수 16764618</b></td><td>2026-06-01 접수 · 2026-06-15 공개 · 시행 리스크-1611</td><td>계보 확정(D-42) · ICI 원본 미수집(D-40) · DTC 참가자격 없음(D-41) · 「자본시장법」 제61조 제2항 근거(D-45) · 삼자 반복 검증(D-44)</td></tr><tr><td><a href="sources/SRC_03_KSD_Decision_16835791.pdf">SRC_03_KSD_Decision_16835791.pdf</a></td><td class="c"><b>접수 16835791</b></td><td>2026-06-11 접수 · 2026-07-08 공개 · 시행 리스크-1930</td><td>리포트 핵심항목과 각 권리 지급 별 작성(1·9항) · 지급시점 잠정 간주와 확정 후 재분류·환급 전달(2·5항) · 국내과세 판단 안 함(3항) · 부존재 사유는 연간 마감 이후 제공(7항)</td></tr><tr><td><a href="sources/SRC_04_KSD_Decision_16848276.pdf">SRC_04_KSD_Decision_16848276.pdf</a></td><td class="c"><b>접수 16848276</b></td><td>2026-06-15 접수 · 2026-07-10 공개 · 시행 리스크-1943</td><td>옛 식별번호 해당 권리지급 분배 총액 USD 15,995,511.58 (전국 합산)</td></tr></table>
-<div class="g"><b>네 건은 뒤의 것이 앞의 것을 인용하며 이어집니다.</b> 이 사실들은 제도가 스스로 밝힌 것이 아니라 사인이 정보공개청구를 거듭하여 <b>물어서 얻어낸 것</b>입니다.</div>
-<h2>Ⅳ. 이 패키지가 다투지 아니하는 것</h2>
-<div class="n">개별 사건의 과세처분이 적법한지, 국내법상 포섭이 어떠한지는 <b>판단하지 아니합니다.</b> 그것은 과세관청의 심사·결정과 납세자의 신고, 그리고 필요하다면 사법의 영역입니다. 이 패키지가 다루는 것은 그에 선행하는 물음 — <b>무엇이 확정되어 있고, 그 확정자료의 전달 도달 범위는 어디이며, 금액이 재현되는가</b> — 입니다.<br><br>개별 납세자의 금액·계좌·성명과 정보공개 청구인의 이름·주소는 조서 본문에 싣지 아니하였습니다. 원부의 해당 면은 그 문서의 성질상 그대로 두었습니다.</div>
-<div class="foot">00_목록 · V1.0 · 2026-09-08 &nbsp;|&nbsp; 발행자 인흥 장세봉 · 독립연구자 &nbsp;|&nbsp; 이 폴더 안에서 모두 열립니다. 전거 고리는 바깥을 가리키지 아니합니다. 다만 발행자 연락처 고리는 인터넷이 있어야 열립니다.</div></div></body></html>
+.dl{display:inline-block;background:#0f2740;color:#fff;text-decoration:none;
+ border-radius:3px;padding:6px 13px;font-size:13.4px;margin:3px 5px 3px 0}
+.dl.o{background:#fff;color:#0f2740;border:1px solid #0f2740}
+.foot{margin-top:44px;padding-top:16px;border-top:1px solid #d7dfe8;
+ color:#5a6a7a;font-size:13px}
+@media print{body{background:#fff;font-size:9.4pt}.hd{margin:0 0 8mm}}
+</style></head><body><div class="hd"><div class="in"><div class="eyebrow">독립연구 아카이브 · 공개자료</div><h1>미국 ETF ROC 국제조세 데이터 투명성 연구<span class="en">Cross-border tax data transparency in the taxation of U.S.-listed ETF distributions</span></h1><div class="sub">국경간 금융소득의 <b>과세사실이 어떻게 생성·변환·검증되는가</b>를 국가기관의 공개문서와 미국 세무자료로 확인한다. 개별 사건의 과세처분이 적법한지는 판단하지 아니한다.</div><div class="flow"><span>실제 거래사실</span><i>&rarr;</i><span>원장과 객관적 증거</span><i>&rarr;</i><span>실질조사</span><i>&rarr;</i><span>국내외 제반 규정에 따른 사실판단</span><i>&rarr;</i><span>근거과세</span></div><div class="m"><span><b>발행자</b> 인흥 장세봉 · 독립연구자</span><span><a href="mailto:inheung0801@gmail.com">inheung0801@gmail.com</a></span><span>010-7753-1240</span><span><a href="https://cafe.naver.com/l2t">cafe.naver.com/l2t</a></span><span>2026-09-08</span><span><a href="LICENSE">CC BY 4.0</a></span></div></div></div>
+<div class="wrap">
+<h2><span class="n">Ⅰ</span>연구의 물음과 역할의 분담</h2>
+<div class="lead">납세자는 과세결론을 스스로 정하는 사람이 아니다. 자기 거래의 실제 사실을 <b>원장과 객관적 증거로 입증</b>하고, 그 사실에 대한 <b>실질조사와 근거과세를 요구</b>하는 당사자이다.</div>
+<div class="grid3"><div class="role"><b>납세자</b>사실입증<br><span style="font-size:13.4px;color:#4a5a6a">취득단위 원장 · 거래·결제 내역 · 외국납부세액영수증을 갖추어 기록하고 제출한다</span></div><div class="role"><b>과세관청</b>사실조사 + 법률적용<br><span style="font-size:13.4px;color:#4a5a6a">제출·확보 자료의 진위와 정합을 조사하고, 확정된 사실에 국내외 제반 규정을 적용한다</span></div><div class="role"><b>금융기관</b>데이터 생성·전달·정정<br><span style="font-size:13.4px;color:#4a5a6a">발행기관·정보벤더·보관기관·예탁결제기관·증권회사가 각 단계의 자료를 만들고 옮기고 고친다</span></div></div>
+<p>「국세기본법」 제14조 제2항은 과세표준의 계산에 관한 규정을 <b>「명칭이나 형식과 관계없이 그 실질 내용에 따라」</b> 적용하도록 정하고, 제16조 제1항은 납세의무자가 장부를 갖추어 기록한 경우 조사와 결정을 <b>「그 장부와 이와 관계되는 증거자료에 의하여야 한다」</b>고 정한다. 같은 조 제3항은 장부와 다르게 결정하였을 때 <b>조사한 사실과 결정의 근거를 결정서에 적도록</b> 한다.</p>
+<h2><span class="n">Ⅱ</span>중심 발견 — 데이터 계보의 시간차</h2>
+<div class="lead">이 연구의 중심은 <b>환급</b>이 아니다. 분배가 먼저 일어나고 그 분배의 <b>최종 세무성격이 뒤에 확정</b>되는 <b>시간차</b>이며, 그 시간차를 건너오는 자료가 어디까지 도달하는가이다.</div>
+<div class="lin"><div class="step"><div class="s"><b>분배 발생</b></div><i>&rarr;</i><div class="s p"><b>지급시점 잠정 처리</b>현금배당으로 간주 ·<br>15% 현지 원천징수</div><i>&rarr;</i><div class="s f"><b>발행사 최종 세무성격 확정</b>회계연도 결산 뒤</div><i>&rarr;</i><div class="s"><b>정보벤더 반영</b></div><i>&rarr;</i><div class="s"><b>보관기관·적격중개인<br>소득재분류</b></div><i>&rarr;</i><div class="s"><b>예탁결제기관 전달</b></div><i>&rarr;</i><div class="s"><b>증권회사<br>투자자별 귀속</b></div><i>&rarr;</i><div class="s g"><b>국내 과세자료</b></div></div><div class="branch"><span class="t">별도의 가지</span><span>최종 세무성격 확정</span><i>&rarr;</i><span>과납 원천징수세액 환급</span></div></div>
+<div class="warn"><b>순서를 뒤집어 읽지 아니한다.</b> 환급이 소득성격을 만드는 것이 아니다. <b>최종 세무성격의 확정이 먼저이고, 환급은 그 뒤의 정산</b>이다. 따라서 「환급되지 아니하였으므로 자본환급이 아니다」는 역추론은 성립하지 아니한다.</div>
+<h2><span class="n">Ⅲ</span>판단규칙 — 금융세제과-576</h2>
+<div class="note"><b>예규는 결론이 아니라 판단규칙이다.</b> 「예규 576 = 자본환급 비과세」로 읽으면 잘못이다. 예규의 구조는 이것이다 — <b>이익·잉여금의 분배인지, 자본의 감소로 인한 대가인지를 「국내외 제반 규정에 따라 사실 판단」한다.</b> 후자에 해당하는 경우에만, 그 ETF 를 취득하기 위하여 사용한 금액을 <b>초과하는 부분에 한하여</b> 의제배당이 된다.</div>
+<table><tr><th style="width:6%">차례</th><th style="width:34%">무엇을 하는가</th><th>준거</th></tr><tr><td>1</td><td>미국법상 최종 세무자료 확인</td><td>Form 8937 · Form 1099-DIV Box 3 · 자료전달 규격 Box 3</td></tr><tr><td>2</td><td>실제 법률효과 확인</td><td>미국 내국세법 제301조(c)(2) — 조정취득가액에 충당되어 이를 감소시킨다</td></tr><tr><td>3</td><td>투자자별 귀속 및 취득가액 검증</td><td>권리기준일 보유수량 · 취득단위 원장 · 외국납부세액영수증</td></tr><tr><td>4</td><td>국내 사실판단</td><td>재정경제부 금융세제과-576 — 국내외 제반 규정에 따른 사실판단</td></tr><tr><td>5</td><td>국내 세법상 과세결론</td><td>「소득세법」 제17조 제1항 · 제2항 제1호</td></tr></table>
+<div class="warn"><b>미국법의 명칭 하나로 국내법의 결론이 자동으로 나오지 아니한다.</b> 이 연구는 미국법상 <span style="font-family:monospace">Nondividend Distribution</span> · <span style="font-family:monospace">Return of Capital</span> · <span style="font-family:monospace">adjusted basis</span> 와 국내 예규의 「자본의 감소로 인하여 주주가 취득하는 금전」을 <b>동의어로 쓰지 아니한다.</b> 미국법상 사실효과를 먼저 확정하고, 그 사실이 국내법의 개념에 해당하는지는 따로 판단한다.</div>
+<h2><span class="n">Ⅳ</span>증거 — 무엇을 증명하고, 무엇까지는 증명하지 아니하는가</h2>
+<p>아래는 국가기관이 발급한 문서와 미국의 공식 자료다. 각 칸의 <b>증명범위</b>는 그 문서의 문언에서 직접 나오는 것만 적었고, 연구자의 추론은 <b>연구상 함의</b>로 갈라 두었다. 둘을 섞지 아니한다.</p>
+<div class="ev"><div class="h"><b>한국예탁결제원 정보공개 결정통지</b><span class="meta">접수 16516499 · 부분공개 · 시행 리스크-1202 (2026-05-07) · 6면</span></div><div class="b"><div class="row"><div class="k k-yes">증명범위</div><div><ul style="margin:0;padding-left:18px"><li>기업행위 메시지 가운데 소득성격이 「DVCA 제외 기타코드」인 건은 존재하지 아니한다</li><li>미국시장 관행상 우선 배당으로 간주하여 15% 현지 원천징수한 후, 발행사의 소득구분 확정 시 재분류·환급된다</li><li>한국예탁결제원은 DTCC 참가자가 아니며 ICI Tax Supplement 를 수령하지 아니한다</li></ul></div></div><div class="row"><div class="k k-no">증명하지<br>아니하는 것</div><div><ul style="margin:0;padding-left:18px"><li>개별 지급건의 최종 세무성격</li><li>개별 납세자의 과세표준이나 그 적법성</li></ul></div></div><div class="row"><div class="k k-imp">연구상 함의</div><div class="imp">지급시점의 배당 처리가 <b>확정이 아니라 잠정</b>임을 국가기관이 서면으로 밝힌 첫 문서다.</div></div><div style="margin-top:12px"><a class="dl" href="sources/SRC_01_KSD_Decision_16516499.pdf">원문 열기</a></div></div></div>
+<div class="ev"><div class="h"><b>같은 기관 정보공개 결정통지</b><span class="meta">접수 16764618 · 공개 · 시행 리스크-1611 (2026-06-15) · 5면</span></div><div class="b"><div class="row"><div class="k k-yes">증명범위</div><div><ul style="margin:0;padding-left:18px"><li>자료의 계보가 「해외발행사 →(정보제공벤더)→ 외국 보관기관 → 한국예탁결제원 → 예탁자(증권사)」이다</li><li>ICI 원본은 수집하지 아니하고 처리 결과를 전달받으며, DTC 참가자격이 없어 간접 접근한다</li><li>근거는 「자본시장법」 제61조 제2항 및 같은 법 시행령 제63조 제3항이다</li></ul></div></div><div class="row"><div class="k k-no">증명하지<br>아니하는 것</div><div><ul style="margin:0;padding-left:18px"><li>각 회차의 자본환급 비율</li><li>개별 계좌에 반영되었는지 여부</li></ul></div></div><div class="row"><div class="k k-imp">연구상 함의</div><div class="imp">계보의 <b>단계와 순서</b>가 추정이 아니라 기관의 서면으로 확정된다.</div></div><div style="margin-top:12px"><a class="dl" href="sources/SRC_02_KSD_Decision_16764618.pdf">원문 열기</a></div></div></div>
+<div class="ev"><div class="h"><b>같은 기관 정보공개 결정통지</b><span class="meta">접수 16835791 · 공개 · 시행 리스크-1930 (2026-07-08) · 6면</span></div><div class="b"><div class="row"><div class="k k-yes">증명범위</div><div><ul style="margin:0;padding-left:18px"><li>소득재분류 리포트의 핵심항목은 예탁계좌 · ISIN · 기준일 · 보유수량 · <b>재분류된 소득성격 · 변경세액 · 환급금</b>이다</li><li>리포트는 <b>각 권리 지급 별로</b> 작성된다</li><li>지급시점은 잠정 간주이고, 확정 후 재분류·환급이 이루어져 <b>리포트와 환급금이 증권회사로 전달</b>된다</li><li>한국예탁결제원은 국내과세 판단·안내는 하지 아니한다</li></ul></div></div><div class="row"><div class="k k-no">증명하지<br>아니하는 것</div><div><ul style="margin:0;padding-left:18px"><li>증권회사가 그 자료를 개인별 과세자료에 반영하였는지 여부</li><li>국내 과세처분의 당부</li></ul></div></div><div class="row"><div class="k k-imp">연구상 함의</div><div class="imp">확정된 소득성격과 환급금이 <b>각 권리 지급 별로 국내 증권회사까지 도달</b>한다는 것이 문서로 확인된다. 남는 물음은 그 다음 단계의 <b>반영</b>이다.</div></div><div style="margin-top:12px"><a class="dl" href="sources/SRC_03_KSD_Decision_16835791.pdf">원문 열기</a></div></div></div>
+<div class="ev"><div class="h"><b>같은 기관 정보공개 결정통지 <span class="meta">(타인정보 가림본)</span></b><span class="meta">접수 16848276 · 공개 · 시행 리스크-1943 (2026-07-10) · 6면</span></div><div class="b"><div class="row"><div class="k k-yes">증명범위</div><div><ul style="margin:0;padding-left:18px"><li>한국예탁결제원은 소득재분류의 <b>기준설정 및 구성항목 결정과는 관련이 없으며</b>, 현지 보관기관이 전달한 자료를 예탁참가자에게 전달하는 것이 업무범위이다</li><li>현지 보관기관 확인 결과, <b>발행사가 해당 소득재분류 정보를 현지 보관기관의 연간 처리 마감일 이후에 정보벤더에 제공</b>하였다</li><li>보관기관은 <b>마감 시점까지 확보된 데이터에 한하여</b> 소득재분류 및 환급 처리를 수행하며, 발행사의 정보제공이 늦으면 그 건은 제외된다</li><li><b>소득재분류는 ISIN 변경 등과 직접적인 연관이 없어 별도의 매핑 처리 과정은 존재하지 아니한다</b></li><li>해당 권리지급 분배 총액은 USD 15,995,511.58 이다</li><li>투자자 수·계좌 수 데이터는 존재하지 아니한다</li></ul></div></div><div class="row"><div class="k k-no">증명하지<br>아니하는 것</div><div><ul style="margin:0;padding-left:18px"><li>식별번호 변경이 누락의 원인이라는 것 — 기관은 그 반대로 답하였다</li><li>개별 투자자의 환급 여부나 그 금액</li></ul></div></div><div class="row"><div class="k k-imp">연구상 함의</div><div class="imp">누락의 원인으로 기관이 밝힌 것은 <b>연간 처리 마감(cutoff)</b>이다. 납세자 자료에서 관찰되는 <b>식별번호 경계와의 상관</b>은 연구자의 관찰이며, 기관의 인과 설명과 구별하여 읽어야 한다.</div></div><div style="margin-top:12px"><a class="dl" href="sources/SRC_20_KSD_Decision_16848276_Redacted.pdf">원문 열기</a></div></div></div>
+<div class="ev"><div class="h"><b>결정기간 연장통지</b><span class="meta">접수 16835791 · 시행 리스크-1738 (2026-06-24) · 2면</span></div><div class="b"><div class="row"><div class="k k-yes">증명범위</div><div><ul style="margin:0;padding-left:18px"><li>연장 사유가 「소득재분류 미반영에 대하여 <b>현지 보관기관의 확인이 필요</b>한 사안에 해당하나 현지 보관기관의 조사 및 답변이 지연되고 있어」이다</li></ul></div></div><div class="row"><div class="k k-no">증명하지<br>아니하는 것</div><div><ul style="margin:0;padding-left:18px"><li>그 조회의 내용이나 결과</li></ul></div></div><div class="row"><div class="k k-imp">연구상 함의</div><div class="imp">기관이 <b>현지에 직접 조회하였다</b>는 사실이 기관 자신의 문서로 남았다. 계보 앞단이 실재함을 기관 스스로 증명한다.</div></div><div style="margin-top:12px"><a class="dl" href="sources/SRC_17_KSD_Extension_16835791.pdf">원문 열기</a></div></div></div>
+<div class="ev"><div class="h"><b>결정기간 연장통지 <span class="meta">(타인정보 가림본)</span></b><span class="meta">접수 16848277 · 2면</span></div><div class="b"><div class="row"><div class="k k-yes">증명범위</div><div><ul style="margin:0;padding-left:18px"><li>같은 사유의 별건 청구가 존재하고, 같은 연장 사유가 적용되었다</li></ul></div></div><div class="row"><div class="k k-no">증명하지<br>아니하는 것</div><div><ul style="margin:0;padding-left:18px"><li>그 청구의 결정 내용</li></ul></div></div><div class="row"><div class="k k-imp">연구상 함의</div><div class="imp">같은 구조의 물음이 <b>여러 건으로 반복</b>되었음을 보인다.</div></div><div style="margin-top:12px"><a class="dl" href="sources/SRC_18_KSD_Extension_16848277.pdf">원문 열기</a></div></div></div>
+<div class="ev"><div class="h"><b>재정경제부 금융세제과-576</b><span class="meta">2026-06-26 · 국세법령정보시스템 인쇄본 · 1면</span></div><div class="b"><div class="row"><div class="k k-yes">증명범위</div><div><ul style="margin:0;padding-left:18px"><li>이익이나 잉여금의 분배인 경우 「소득세법」 제17조 제1항의 배당소득이다</li><li>자본의 감소로 인하여 주주가 취득하는 금전의 경우, 같은 조 제2항에 따라 <b>취득하기 위하여 사용한 금액을 초과하는 부분에 한하여</b> 의제배당으로 과세된다</li><li>어디에 해당하는지는 <b>「국내외 제반 규정에 따라 사실 판단」</b>할 사항이다</li></ul></div></div><div class="row"><div class="k k-no">증명하지<br>아니하는 것</div><div><ul style="margin:0;padding-left:18px"><li>어떤 종목·어떤 회차가 어디에 해당하는지</li><li>자본환급이 곧 비과세라는 결론</li></ul></div></div><div class="row"><div class="k k-imp">연구상 함의</div><div class="imp">예규는 <b>결론이 아니라 판단규칙</b>이다. 사실판단을 요구한다는 것이 이 문서의 핵심이다.</div></div><div style="margin-top:12px"><a class="dl" href="sources/SRC_19_MOFE_Ruling_576.pdf">원문 열기</a></div></div></div>
+<div class="note"><b>미국 법령과 서식 원문</b>도 함께 싣는다 — <a href="sources/SRC_09_USC301_Distributions.pdf">내국세법 제301조</a> · <a href="sources/SRC_10_USC316_Dividend.pdf">제316조</a> · <a href="sources/SRC_11_USC851_RIC.pdf">제851조</a> · <a href="sources/SRC_12_USC6045B_IssuerReporting.pdf">제6045B조</a> · <a href="sources/SRC_07_Form1042S.pdf">Form 1042-S</a> · <a href="sources/SRC_08_Form1042S_Instructions.pdf">같은 서식 지침</a> · <a href="sources/SRC_13_Form8937_Instructions.pdf">Form 8937 안내</a> · <a href="sources/SRC_14_KORUS_Treaty_Art28.pdf">조약 제693호 제28조</a> · <a href="sources/SRC_15_IntlTaxAct_Art36_38.pdf">「국제조세조정에 관한 법률」 제36조·제38조</a></div>
+<h2><span class="n">Ⅴ</span>전거통제 — 과장하지 아니한다</h2>
+<table><tr><th style="width:26%">전거</th><th style="width:37%">그 전거가 정하는 것</th><th>넘어서 읽지 아니할 것</th></tr><tr><td><b>미국 내국세법 제851조(g)</b><br><span style="font-size:12.8px;color:#5a6a7a">Special rule for series funds</span></td><td>하나의 규제투자회사가 둘 이상의 fund 를 갖는 경우, 각 fund 를 <b>Title 26 의 적용상</b> 별도의 법인<span style="font-family:monospace;font-size:13px">(separate corporation)</span>으로 <b>취급</b>한다</td><td>각 fund 가 <b>조직법상 별개의 법인격을 가진다</b>는 뜻이 아니다. 세법 적용상의 취급이지 조직형태의 문제가 아니다.<br>같은 조 <b>(h)는 Qualified publicly traded partnership 에 관한 별개 조항</b>으로, series fund 규정이 아니다</td></tr><tr><td><b>같은 법 제301조(c)(2)</b></td><td>이익 및 잉여금에서 나오지 아니한 분배는 주식의 <b>조정취득가액에 충당되어 이를 감소</b>시킨다</td><td>국내법상 「자본의 감소」와 동의어가 아니다</td></tr><tr><td><b>같은 법 제316조(a)</b></td><td>배당은 <b>이익 및 잉여금으로부터의 분배</b>에 한한다</td><td>국내 배당소득 과세 여부를 직접 정하지 아니한다</td></tr><tr><td><b>금융세제과-576</b></td><td>이익·잉여금의 분배인지 자본의 감소로 인한 대가인지를 <b>사실 판단</b>한다</td><td>「자본환급은 비과세」라는 결론을 정한 것이 아니다</td></tr></table>
+<div class="note"><b>쓰지 아니하는 말.</b> 「자본금 환급」은 쓰지 아니한다 — 국내 상법상 자본금의 감소로 읽혀 오해를 낳는다. <span style="font-family:monospace;font-size:13px">paid-in capital</span> 을 「자본금」으로 옮기지 아니한다. 원부에 없는 「이론값」·「추정값」·「참고값」은 만들지 아니하며, 확인되지 아니한 것은 <b>보류</b>로 적는다.</div>
+<h2><span class="n">Ⅵ</span>연구 조서</h2>
+<div class="grid2"><div class="card"><b>통섭 조서</b><br><span style="font-size:13.6px;color:#4a5a6a">요인 · 정보공개 결정통지의 통섭 · 전산데이터 계보 · 용어전거표</span><br><a class="dl" href="docs/01_한눈에보는_ROC잠정과확정_통섭.pdf">PDF</a><a class="dl o" href="docs/01_통섭.html">웹</a></div><div class="card"><b>연구보고서 — 수리증명과 사실증빙</b><br><span style="font-size:13.6px;color:#4a5a6a">정보공개 결정통지를 원부로 한 명제와 따름</span><br><a class="dl" href="docs/02_연구보고서_수리증명과_사실증빙.pdf">PDF</a></div><div class="card"><b>형식과세와 근거과세 — 한 장 대비</b><br><span style="font-size:13.6px;color:#4a5a6a">조사의 차례와 입증의 배분 · 재현식</span><br><a class="dl" href="docs/03_형식과세와_근거과세_한장대비.pdf">PDF</a></div><div class="card"><b>논문 — 검증 가능성과 과세권</b><br><span style="font-size:13.6px;color:#4a5a6a">조세행정의 인식론적 조건</span><br><a class="dl" href="docs/04_논문_검증가능성과_과세권.pdf">PDF</a><a class="dl o" href="docs/04_논문.html">웹</a></div><div class="card"><b>백서 인포그래픽 — 한 장으로 보는 전체</b><br><span style="font-size:13.6px;color:#4a5a6a">다섯 칸으로 줄인 전체</span><br><a class="dl" href="docs/05_백서_인포그래픽_한장으로_보는_전체.pdf">PDF</a><a class="dl o" href="docs/05_백서.html">웹</a></div><div class="card"><b>목록과 대장</b><br><span style="font-size:13.6px;color:#4a5a6a">전거통제 목록 · 무엇을 가렸는지</span><br><a class="dl o" href="data/00_전거통제목록.csv">전거통제 목록</a><a class="dl o" href="data/00_공개판_대장.csv">공개판 대장</a></div></div>
+<h2><span class="n">Ⅶ</span>재현성 도구</h2>
+<p>이 연구의 주장은 <b>재현될 수 있어야</b> 성립한다. 아래 도구는 연구의 목적이 아니라, 같은 원자료로 같은 값에 이르는지를 확인하기 위한 수단이다.</p>
+<div class="card"><b>ROC 환급 종합소득세 계산기</b> <span style="font-size:13.4px;color:#5a6a7a">— 금융세제과-576 · 「소득세법」 제62조 비교과세</span><br><a class="dl" href="https://sebjang.github.io/ROC_INNER_BASIS_576/">계산기 열기</a></div>
+<div class="note"><b>재현식</b> — 과다원천징수세액 = 주당 자본환급 &times; 권리기준일 보유수량 &times; 적용 원천징수율. 세 값이 모두 문서에 기재된 상수이므로 과세관청·금융기관·납세자가 각각 산출하여도 같은 값에 이른다. 그러므로 이것은 주장이 아니라 <b>계산</b>이며, 다투려면 식의 어느 값이 틀렸는지를 대어야 한다.</div>
+<h2><span class="n">Ⅷ</span>국제 논의와의 접점</h2>
+<p>과세자료 처리의 <b>설명가능성</b>이 책임성과 신뢰의 조건이라는 인식은 국제 조세행정 논의에도 나타난다. OECD Global Forum 의 <i>Tax Transparency in Asia 2026 : Asia Initiative Progress Report</i>(Box 13, 114면)에서 <b>아르메니아 국세위원회</b>의 실무자는 인공지능 도입에 관하여 이렇게 말한다.</p>
+<div class="card" style="border-left:3px solid #0f2740"><span style="font-family:Georgia,serif;font-size:15px">&ldquo;Another important consideration is model interpretability. Being able to explain why a model identifies certain taxpayers as high risk is critical for accountability and trust within the administration.&rdquo;</span><br><span style="font-size:13.2px;color:#5a6a7a">Sergey Paturyan, Advisor, IT Department, State Revenue Committee of Armenia</span></div>
+<div class="note"><b>인용의 한계를 밝힌다.</b> 위 문장은 <b>아르메니아</b> 실무자의 말이고, 같은 상자에서 <b>대한민국 국세청</b>이 발표한 것은 <b>공통보고기준 자료의 이름 대조·음역(transliteration) 도구</b>에 관한 것으로 서로 다른 주제다. 또한 그 「책임성과 신뢰」는 <b>행정 내부</b>를 가리킨다. 이 연구가 다루는 <b>납세자를 향한</b> 검증가능성과는 층위가 다르므로, 이 인용은 <b>같은 방향의 국제적 문제의식</b>을 보이는 데 그치고 그 이상으로 끌어 쓰지 아니한다.</div>
+<p>그럼에도 <b>투명성 · 접근성 · 추적성 · 재현성</b>이라는 네 조건은 구호가 아니라 <b>국제조세 데이터 거버넌스</b>의 설계원칙으로 확장될 여지가 있다. 하나의 분배가 발행기관 · 정보벤더 · 원천징수의무자 · 보관기관 · 적격중개인 · 예탁결제기관 · 증권회사 · 납세자 · 과세관청을 통과하는 구조에서는, <b>누가 무엇을 언제 어떻게 바꾸었는가</b>가 보존되지 아니하면 어느 쪽도 사실을 증명할 수 없기 때문이다.</p>
+<div class="foot"><b>이 저장소가 하지 아니하는 것</b> — 개별 사건의 과세처분이 적법한지 판단하지 아니한다. 특정 과세관서의 명칭·처리경과·상호비교를 싣지 아니한다. 세무대리나 법률자문이 아니다.<br><br><b>개인정보</b> — 개별 납세자의 성명·실명확인번호·주소·금액·계좌·보유수량·식별부호는 싣지 아니하였고, 원부의 해당 부분은 가렸다. 무엇을 가렸는지는 <a href="data/00_공개판_대장.csv">공개판 대장</a>에 적었다.<br><br>발행자 인흥 장세봉 · 독립연구자 &nbsp;·&nbsp; <a href="mailto:inheung0801@gmail.com">inheung0801@gmail.com</a> &nbsp;·&nbsp; 010-7753-1240 &nbsp;·&nbsp; 구미시 1공단로 212 한라시그마밸리 지식산업센터 815~816호 &nbsp;·&nbsp; <a href="https://cafe.naver.com/l2t">cafe.naver.com/l2t</a><br>문서는 <a href="LICENSE">CC BY 4.0</a> 로 배포한다. 정부 저작물·법령·정보공개 문서는 각기 그 자신의 지위에 따른다. &nbsp;·&nbsp; 2026-09-08</div>
+</div></body></html>
