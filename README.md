@@ -7,7 +7,7 @@
 
 **발행자** 인흥 장세봉 · 독립연구자 &nbsp;·&nbsp; **판** V1.0 · 2026-09-08
 
-**연락처** [sebjang@gmail.com](mailto:sebjang@gmail.com) · 010-7753-1240
+**연락처** [inheung0801@gmail.com](mailto:inheung0801@gmail.com) · 010-7753-1240
 · 구미시 1공단로 212 한라시그마밸리 지식산업센터 815~816호
 · [https://cafe.naver.com/l2t](https://cafe.naver.com/l2t)
 
