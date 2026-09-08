@@ -11,7 +11,7 @@
 · 구미시 1공단로 212 한라시그마밸리 지식산업센터 815~816호
 · [https://cafe.naver.com/l2t](https://cafe.naver.com/l2t)
 
-**ROC과표 수정 종합소득세 계산기** — 예규-576 · 「소득세법」 제62조 비교과세
+**ROC과표 정정 종합소득세 계산기** — 예규-576 · 「소득세법」 제62조 비교과세
 [https://sebjang.github.io/ROC_INNER_BASIS_576/](https://sebjang.github.io/ROC_INNER_BASIS_576/)
 
 ---
